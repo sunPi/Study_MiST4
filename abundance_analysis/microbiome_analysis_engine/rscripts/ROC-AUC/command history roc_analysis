@@ -1,0 +1,9 @@
+Rscript roc_analysis.R TRUE 1000 CV_logap 3 2
+Rscript roc_analysis.R TRUE 1000 CV_LOH 4 2
+Rscript roc_analysis.R TRUE 1000 CV_TAI 5 2
+Rscript roc_analysis.R TRUE 1000 CV_LST 6 2
+Rscript roc_analysis.R TRUE 1000 CV_HRDsum 7 2
+Rscript roc_analysis.R TRUE 1000 CV_SCNA 8 2
+Rscript roc_analysis.R TRUE 1000 CV_cytotoxic_myeloid_ratio 9 2
+Rscript roc_analysis.R TRUE 1000 CV_UPD 10 2
+Rscript roc_analysis.R TRUE 1000 CV_combined 11 2

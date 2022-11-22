@@ -1,3 +1,4 @@
+# sessionInfo()
 # ------------------ Functions -------------------------------------------------
 requirements  <- function(pkgs){ # This function checks package requirements and install them if they are missing
   suppressMessages(if (!require("BiocManager", character.only = TRUE)) { # First check via R BioConductior
@@ -84,7 +85,7 @@ buildModel <- function(data, train.data, test.data, xi = 3, yi = 2, family = NUL
     xname <- names(train.data)[xi]
     yname <- names(train.data)[yi]
     
-    m <- glm(f, data = train.data, family = "binomial") # Use 'glm()' from native R to create a model of f(x) = an + b
+    m <- glm(f, data = train.data, family = "binomial")      # Use 'glm()' from native R to create a model of f(x) = an + b
     pp <- predict(m, newdata = test.data, type = "response") # Use the fitted model to predict and generate prediction probabilities
     
     roc.obj <- pROC::roc(test.data[,yi], pp) # Create a ROC object
@@ -216,7 +217,7 @@ yi    <- as.numeric(args[5]) # Specify independent variable column
 
 # cv <- TRUE
 # folds <- 1000
-# aname <- "test_cv"
+# aname <- "smaller_sample_size"
 # xi <- 3
 # yi <- 2
 
@@ -287,8 +288,10 @@ responseModel <- function(data, xi = 3, yi = 2, qty = 0.8, folds = 20, aname = "
   }
 }
 
-
-bm.data$response
+# xi <- 3
+# yi <- 2
+# cv <- FALSE
+# aname <- "test"
 
 responseModel(data = bm.data, xi = xi, yi = yi, folds = folds, aname = aname, cv = cv)
 
